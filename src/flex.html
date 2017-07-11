@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>Flex Lab</title>
+        <style>
+            body {
+                display: flex;
+                background-color: lightblue;
+                height: 100%;
+                margin: 0;
+            }
+            div.top {
+                display: flex;
+                justify-content: space-between;
+                width: 80%;
+                height: 80%;
+                margin: auto;
+                text-align: center;
+            }
+            div.main {
+                width: 64%;
+                height: 100%;
+                background-color: white;
+                maigin: auto;
+                display: flex;
+                flex-direction: column;
+            }
+            div.right {
+                width: 35%;
+                height: 100%;
+                background-color: lightyellow;
+                maigin: auto;
+            }
+            div.post {
+                width: 90%;
+                height: 30%;
+                margin: auto;
+                border: solid 1px;
+                display: flex;
+            }
+            div.post h2 {
+                width: 100%;
+                margin: auto;
+                /*border: 1px dashed;*/
+            }
+        </style>
+    </head>
+    <body>
+        <div class="top">
+            <div class="main">
+                <h1>Main</h1>
+                <div class="post">
+                    <h2>Post1</h2>
+                </div>
+                <div class="post">
+                    <h2>Post2</h2>
+                </div>
+            </div>
+            <div class="right">
+                <h1>Sidebar</h1>
+            </div>
+        </div>
+        <script>
+//            document.body.style.display = 'flex';
+//            document.body.style.height = '100%';
+//            document.body.style.margin = '0px';
+//            document.body.style.backgroundColor = 'lightblue';
+        </script>
+    </body>
+</html>

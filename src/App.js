@@ -41,6 +41,7 @@ class Companies extends Component {
             </TableRow>
         ));
         return (
+            <div>
             <MuiThemeProvider>
                     <Table>
                         <TableHeader>
@@ -54,6 +55,7 @@ class Companies extends Component {
                         </TableBody>
                     </Table>
             </MuiThemeProvider>
+            </div>
         )
     }
 }
@@ -68,6 +70,15 @@ class App extends Component {
         };
         this.handleLogin = this.handleLogin.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
+    }
+    componentDidMount() {
+        document.body.style.display = 'flex';
+        document.body.style.margin = 0;
+        document.body.style.height = '100%';
+        document.getElementsByTagName('html')[0].style.height = '100%';
+        console.log(document.body.style.height);
+
+        document.getElementById('root').style.margin = 'auto';
     }
     handleInputChange(e) {
         const target = e.target;
@@ -109,20 +120,20 @@ class App extends Component {
     }
     render() {
         const loginWindow = (
-          <MuiThemeProvider>
-              <Center>
-                  <div>
+        <div style={{border: '5px groove'}}>
+            <MuiThemeProvider>
+                  <div style={{padding: '20px 40px'}}>
                   <h1>Welcome to iMarket</h1>
                   <form method="post" onSubmit={this.handleLogin}>
-                      <div><TextField hintText="username" name="username" value={this.state.username} onChange={this.handleInputChange} /></div>
-                      <div><TextField hintText="password" name="password" type="password" value={this.state.password} onChange={this.handleInputChange} /></div>
+                      <div><TextField style={{width: "100%"}} hintText="username" name="username" value={this.state.username} onChange={this.handleInputChange} /></div>
+                      <div><TextField style={{width: "100%"}} hintText="password" name="password" type="password" value={this.state.password} onChange={this.handleInputChange} /></div>
                       <Center>
                       <RaisedButton label="Login" type="submit" />
                       </Center>
                   </form>
                   </div>
-              </Center>
-          </MuiThemeProvider>
+            </MuiThemeProvider>
+        </div>
         );
         const companiesWindow = (
             <Companies />
